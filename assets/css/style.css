@@ -1,0 +1,192 @@
+/* add padding around enitre body  */
+body {
+  padding: 32px;
+}
+
+/* change text color to black for current day forecast */
+.currentForecastDisplayed p {
+  color: black;
+}
+
+/* change p text color to white  */
+p {
+  color: #fff;
+}
+
+/* format header  */
+header {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 121, 23, 1) 0%,
+    rgba(0, 255, 186, 1) 100%
+  );
+  text-align: center;
+}
+
+/* format title  */
+#formTitle {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+/* format form  */
+#cityInput {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* change h6  */
+h6 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* format search button on form  */
+.search-button {
+  width: 100%;
+  margin: 5px 0px 10px 0px;
+}
+
+/* style list  */
+.list-styling {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* format font for forcast  */
+.forecast-font {
+  font-size: 10px;
+}
+
+/* format cards displaying forecast  */
+.display-cards {
+  width: 100%;
+  margin: 15px;
+}
+
+/* format forcast  */
+.five-day-forcast {
+  padding: 0.2 rem;
+  margin: 4px;
+  margin-bottom: 1rem;
+}
+
+/* add padding  */
+.forecast-display-cards {
+  padding: 5px;
+}
+
+/* change bootstrap styling  */
+.card-body-format {
+  flex: 1 1 auto;
+  padding: 0.25rem 0.25rem;
+  margin: 5px;
+}
+
+/* format error message  */
+.city-input-error {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightpink;
+  opacity: 60%;
+}
+
+/* add borders  */
+.display-boarders {
+  padding: 16px 0 6px 12px;
+}
+
+/* format list  */
+ul {
+  display: flex;
+  border-radius: 0;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: 0.25rem;
+}
+
+/* format list items  */
+li {
+  position: relative;
+  /* display: block; */
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+  background-color: #fff;
+  border: 0.5px solid rgba(0, 0, 0, 0.125);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* add media quieres  to make sure content fits on different sized screens */
+@media screen and (max-width: 990px) {
+  .card-body p {
+    font-size: 26px;
+  }
+
+  .card-body h1 {
+    font-size: 52px;
+  }
+
+  .card-body h4 {
+    font-size: 32px;
+  }
+
+  .card-body h5 {
+    font-size: 32px;
+  }
+
+  .card-body h6 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-body h1 {
+    font-size: 32px;
+  }
+
+  .card-body h4 {
+    font-size: 22px;
+  }
+
+  .card-body h5 {
+    font-size: 22px;
+  }
+
+  .card-body p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-body h1 {
+    font-size: 26px;
+  }
+
+  .card-body h4 {
+    font-size: 18px;
+  }
+
+  .card-body h5 {
+    font-size: 22px;
+  }
+
+  .card-body p {
+    font-size: 12px;
+  }
+
+  .card-body h6 {
+    font-size: 18px;
+  }
+}
