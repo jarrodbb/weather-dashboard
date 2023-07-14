@@ -4,64 +4,114 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- add google fonts  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-
+    <!-- Bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <!-- css style sheet  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
+    
 </head>
 
 <body>
+  <!-- Container added for formatting  -->
+  <header class="min-100-vh container">
+    <div class="row ">
+    <h1 class="Display-3 col-12">Weather Dashboard</h1>
+    </div>
+  </header>
+
+  <!-- Container added for formatting  -->
+  <div class="min-100-vh container">
+   <!-- row class added  -->
+    <div class="row ">
+      <!-- col added for bootstrap styling  -->
+  <div class = "justify-content-center col-sml-12 col-md-12 col-lg-4 display-boarders">
+    <!-- form for city input   -->
     <form id="search-weather">
       <div class="form-group">
-        <label for="citySearchWeather">Search for a city:</label>
+        <label for="citySearchWeather" id="formTitle">Search for a city:</label>
         <input type="text" class="form-control" id="cityInput" placeholder="Enter the city's name">
         <small id="formReuirements" class="form-text text-muted">City input required</small>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <!-- button to submit  -->
+      <button type="submit" class="search-button btn btn-primary btn-lg btn-block" >Search</button>
     </form>
 
-    <div id="local-storage"></div>
-
-    <div id="multiple-cities"></div>
-
-    <div id="clear-storage"></div>
-
-
-    <div class="flex-row align-center justify-center min-100-vh bg-primary" >
-      <div class="col-12 col-md-9 flex-column align-center bg-light p-5" >
-        <div class="currentForecastDisplayed flex-row">
-          </div>
-      </div>
-
-      <div id="forecastContainer" class="col-12 col-md-9 flex-column align-center bg-light p-5" >
-        <div class="fiveDayForecast flex-row">
-          </div>
-      </div>
+    <div>
+      <!-- div to display local storage  -->
+      <div id="local-storage"></div>
+    <!-- button to clear list  -->
+      <div id="clear-storage"></div>
     </div>
 
-          
+  </div>
 
+  <!-- col added for bootstrap styling  -->
+  <div class = "col-sml-12 col-lg-8 display-boarders">
+    <!-- div created to display list of cities with the same name -->
+    <div id="multiple-cities"></div>
 
-    
-    <!-- add divs for search form - use bootstrap form -->
-    <!-- add div for local storage list  -->
-    <!-- add div for displaying dasboard  -->
-    
-    <!-- add dayjs  -->
-    <!-- link js  -->
+      <div>
+      <!-- div to display current forecast  -->
+      <!-- col added for bootstrap styling  -->
+        <div class="weather-section col-sml-12 col-lg-12 " >
+          <div class="col-12 col-lg-12 flex-column align-center   forecast-display-cards" > 
+            <div class="currentForecastDisplayed flex-row">
+            </div>
+          </div>
+
+      <!-- div to display 5 day forecast  -->
+      <!-- col added for bootstrap styling  -->
+          <div id="forecastContainer" class="col-12 col-lg-12  forecast-display-cards" >
+            <div class="fiveDayForecast justify-content-between row">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- modal to display disclaimer when loaded -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Weather Dashboard Disclaimer</h5>
+       
+      </div>
+      <div class="modal-body bg-warning">
+        <h5 >This site takes the Min and Max inputs for temp, wind speed and humidity for a given period to return an average</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- JQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-      
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+   
+    <!-- dayjs  -->
     <script src="https://unpkg.com/dayjs"></script>
     <script src="https://unpkg.com/dayjs-plugin-utc"></script>
       <script>
       dayjs.extend(dayjsPluginUTC.default)
       </script>   
       <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.8/locale/tzl.min.js" integrity="sha512-4PDyP0NBr2rhAsBJVbzrFoBeed9N444Nou5wwurQX1zZVVcRyUa+j2iFAqiiPIX7gM5qGZzLhpK2GFlZWygE3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./assets/js/script.js"></script>
+    <!-- script.js  -->
+      <script src="./assets/js/script.js"></script>
+    
+      </script>
 </body>
 </html>
