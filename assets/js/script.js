@@ -205,7 +205,7 @@ function emptyAllArrays() {
 function getCityLocation(location) {
   //URL to use input from search
   var requestUrl =
-    "https://api.openweathermap.org/geo/1.0/direct?q=" +
+    "http://api.openweathermap.org/geo/1.0/direct?q=" +
     location +
     "&limit=5&appid=e57c88ac4ae3a64d821b0e6104559bfd";
 
