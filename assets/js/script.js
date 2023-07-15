@@ -206,7 +206,7 @@ const weatherKey = "0fa6cf67c95ce9cfddf96f4f78835497";
 function getCityLocation(location) {
   //URL to use input from search
   var requestUrl =
-    "https://api.openweathermap.org/geo/1.0/direct?q=" +
+    "http://api.openweathermap.org/geo/1.0/direct?q=" +
     location +
     "&limit=5&appid=" +
     weatherKey;
