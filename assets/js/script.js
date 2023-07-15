@@ -200,14 +200,17 @@ function emptyAllArrays() {
 
   listOfWeatherIcons = [];
 }
+const weatherKey = "0fa6cf67c95ce9cfddf96f4f78835497";
 
 //Function to fetch API to get the city's latitude and longtitude
 function getCityLocation(location) {
   //URL to use input from search
   var requestUrl =
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
     location +
-    "&limit=5&appid=e57c88ac4ae3a64d821b0e6104559bfd";
+    "&limit=5&appid=" +
+    weatherKey;
+  console.log(requestUrl);
 
   fetch(requestUrl)
     .then(function (response) {
@@ -418,7 +421,9 @@ function getApi(cityLocationLat, cityLocationLon) {
     cityLocationLat +
     "&lon=" +
     cityLocationLon +
-    "&appid=e57c88ac4ae3a64d821b0e6104559bfd&units=metric";
+    "&appid=" +
+    weatherKey +
+    "&units=metric";
 
   fetch(requestUrl)
     .then(function (respone) {
