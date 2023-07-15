@@ -202,7 +202,7 @@ function emptyAllArrays() {
 }
 const weatherKey = "0fa6cf67c95ce9cfddf96f4f78835497";
 
-//Function to fetch API to get the city's latitude and longtitude
+//Function to fetch API to get the city's latitude and longitude
 function getCityLocation(location) {
   //URL to use input from search
   var requestUrl =
@@ -390,7 +390,7 @@ localStorageList.on("click", ".btn", rerunCityLocalStorage);
 
 //function to handle click
 function rerunCityLocalStorage(event) {
-  // get the latitude and longtitude from the selected button
+  // get the latitude and longitude from the selected button
   var btnClickedLocalStorage = $(event.target);
   console.log(btnClickedLocalStorage.innerHTML);
 
@@ -405,7 +405,7 @@ function rerunCityLocalStorage(event) {
   displayListOfCitiesEL.empty();
   //run clear function
   emptyAllArrays();
-  //run forecast function with latitude and longtitude from button
+  //run forecast function with latitude and longitude from button
   getApi(cityLatLocalStorageList, cityLonLocalStorageList);
 }
 
@@ -414,7 +414,7 @@ function average(array) {
   return array.reduce((x, y) => x + y) / array.length;
 }
 
-//Forecast function to fetch API with latitude and longtitude
+//Forecast function to fetch API with latitude and longitude
 function getApi(cityLocationLat, cityLocationLon) {
   var requestUrl =
     "https://api.openweathermap.org/data/2.5/forecast?lat=" +
@@ -439,6 +439,7 @@ function getApi(cityLocationLat, cityLocationLon) {
       // Day 1 (current) - day 5 is assigned to a variable
       // Averages of the min and max for each returned hour for a given day is calculated
       //dayjs is used to format the date
+      console.log(data);
       var dataLength = data.list;
       var currentDate = dayjs(data.list[0].dt_txt);
       console.log(currentDate);
